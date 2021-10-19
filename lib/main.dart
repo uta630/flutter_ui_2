@@ -68,7 +68,28 @@ class _SkeletonLoadingState extends State<SkeletonLoading> {
                         color: Colors.grey,
                         shadowColor: Colors.blueGrey,
                         margin: EdgeInsets.only(right: 20),
-                        child: Text('xxxxx'),
+                        child: SizedBox(
+                          width: 100,
+                          height: 80,
+                        ),
+                      ),
+                      Card(
+                        color: Colors.grey,
+                        shadowColor: Colors.blueGrey,
+                        margin: EdgeInsets.only(right: 20),
+                        child: SizedBox(
+                          width: 100,
+                          height: 80,
+                        ),
+                      ),
+                      Card(
+                        color: Colors.grey,
+                        shadowColor: Colors.blueGrey,
+                        margin: EdgeInsets.only(right: 20),
+                        child: SizedBox(
+                          width: 100,
+                          height: 80,
+                        ),
                       ),
                     ],
                   ),
