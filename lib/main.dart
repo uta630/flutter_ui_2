@@ -36,69 +36,128 @@ class _SkeletonLoadingState extends State<SkeletonLoading> {
           child: skeletonItem(),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   child: const Icon(Icons.add),
+      // ),
     );
   }
 
   Widget skeletonItem() => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           account(),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
           indicatorArea(),
-          const SizedBox(height: 24),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'スライドエリア',
-                style: TextStyle(
-                  fontSize: 20,
+          const SizedBox(height: 30),
+          scrollList(),
+          const SizedBox(height: 30),
+          cardItem(),
+        ],
+      );
+
+  Widget cardItem() {
+    return Column(
+      children: [
+        ListTile(
+          leading: Container(
+            width: 50,
+            height: 50,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey,
+            ),
+          ),
+          trailing: const Icon(Icons.more_vert),
+          title: Container(
+            width: 80,
+            height: 20,
+            color: Colors.grey,
+            margin: const EdgeInsets.only(bottom: 10),
+          ),
+          subtitle: Container(
+            width: 200,
+            height: 30,
+            color: Colors.grey,
+          ),
+          minVerticalPadding: 20,
+          tileColor: Colors.grey,
+        ),
+        const SizedBox(height: 20),
+        ListTile(
+          leading: Container(
+            width: 50,
+            height: 50,
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey,
+            ),
+          ),
+          trailing: const Icon(Icons.more_vert),
+          title: Container(
+            width: 80,
+            height: 20,
+            color: Colors.grey,
+            margin: const EdgeInsets.only(bottom: 10),
+          ),
+          subtitle: Container(
+            width: 200,
+            height: 30,
+            color: Colors.grey,
+          ),
+          minVerticalPadding: 20,
+          tileColor: Colors.grey,
+        ),
+      ],
+    );
+  }
+
+  Column scrollList() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: 200,
+          height: 30,
+          color: Colors.grey,
+        ),
+        const SizedBox(height: 20),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: const [
+              Card(
+                color: Colors.grey,
+                margin: EdgeInsets.only(right: 20),
+                child: SizedBox(
+                  width: 120,
+                  height: 80,
                 ),
               ),
-              const SizedBox(height: 10),
-              ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  Row(
-                    children: const [
-                      Card(
-                        color: Colors.grey,
-                        shadowColor: Colors.blueGrey,
-                        margin: EdgeInsets.only(right: 20),
-                        child: SizedBox(
-                          width: 100,
-                          height: 80,
-                        ),
-                      ),
-                      Card(
-                        color: Colors.grey,
-                        shadowColor: Colors.blueGrey,
-                        margin: EdgeInsets.only(right: 20),
-                        child: SizedBox(
-                          width: 100,
-                          height: 80,
-                        ),
-                      ),
-                      Card(
-                        color: Colors.grey,
-                        shadowColor: Colors.blueGrey,
-                        margin: EdgeInsets.only(right: 20),
-                        child: SizedBox(
-                          width: 100,
-                          height: 80,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+              Card(
+                color: Colors.grey,
+                shadowColor: Colors.blueGrey,
+                margin: EdgeInsets.only(right: 20),
+                child: SizedBox(
+                  width: 120,
+                  height: 80,
+                ),
+              ),
+              Card(
+                color: Colors.grey,
+                shadowColor: Colors.blueGrey,
+                margin: EdgeInsets.only(right: 20),
+                child: SizedBox(
+                  width: 120,
+                  height: 80,
+                ),
               ),
             ],
           ),
-        ],
-      );
+        ),
+      ],
+    );
+  }
 
   Container indicatorArea() {
     return Container(
