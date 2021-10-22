@@ -43,17 +43,18 @@ class _SkeletonLoadingState extends State<SkeletonLoading> {
     );
   }
 
-  Widget skeletonItem() => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          account(),
-          const SizedBox(height: 30),
-          indicatorArea(),
-          const SizedBox(height: 30),
-          scrollList(),
-          const SizedBox(height: 30),
-          cardItem(),
-        ],
+  Widget skeletonItem() => SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            account(),
+            indicatorArea(),
+            const SizedBox(height: 30),
+            scrollList(),
+            const SizedBox(height: 30),
+            cardItem(),
+          ],
+        ),
       );
 
   Widget cardItem() {
